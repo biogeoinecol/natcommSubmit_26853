@@ -1,11 +1,11 @@
 
 library(poweRlaw)
 library(cowplot)
-library(grid)
-library(ggplotify)
+library("grid")
+library("ggplotify")
 library(tidyverse)
 
-#install ecointeraction package from github
+#install ecointeraction package from github using the following code
 install.packages("remotes")
 remotes::install_github("alrobles/natcommSubmit_26853")
 
@@ -14,6 +14,7 @@ malaria_pl = get_powerlaw(ecointeraction::birdsplasmodiumrelictum$incidence, thr
 wnv_pl = get_powerlaw(ecointeraction::birdswnv$incidence, threads = 7)
 coronavirus_pl = get_powerlaw(ecointeraction::batscoronavirus$incidence, threads = 7)
 
+#plot power law
 malaria_plot.data <- plot(malaria_pl$pl, draw = F)
 malaria_fit.data <- lines(malaria_pl$pl, draw = F)
 wnv_plot.data <- plot(wnv_pl$pl, draw = F)
